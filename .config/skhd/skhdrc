@@ -1,0 +1,16 @@
+###########################################################
+# Layout
+###########################################################
+
+alt - f : yabai -m space --layout float
+# Toggle between bsp and stack
+alt + shift - space : [ "$(yabai -m query --spaces --space | jq -r '.type')" = bsp ] \
+    && yabai -m space --layout stack \
+    || yabai -m space --layout bsp
+
+##########################################################
+# Window
+##########################################################
+
+# rotate
+alt - r : yabai -m space --rotate 270

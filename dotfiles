@@ -1,0 +1,13 @@
+#!/bin/sh 
+
+set -e 
+
+limelight_path=/usr/local/bin/limelight
+if ! is_file "$limelight_path"; then
+    git clone https://github.com/koekeishiya/limelight
+    cd limelight
+    make
+    mv ./bin/limelight /usr/local/bin/limelight
+    cd ../
+    rm -rf limelight
+fi
