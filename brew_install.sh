@@ -12,27 +12,10 @@ which brew >/dev/null 2>&1 && brew update
 echo "ok. run brew upgrade..."
 brew upgrade --all
 
-####################################
-# brewでinstallするリスト
-####################################
-<< COMMENTOUT
-formulas=(
-    git
-    yarn
-    yabai
-    skhd
-)
-COMMENTOUT
-
-echo "brew tap"
-
-<< COMMENTOUT
-echo "brew install formula"
-for formula in "${formulas[@]}"; do
-    brew install $formula || brew upgrade $formula
-done
-COMMENTOUT
-
 brew cleanup
 
 echo "brew installed"
+
+brew bundle 
+
+echo "brew packages installed"
